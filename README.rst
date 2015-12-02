@@ -78,25 +78,45 @@ Install Include files
 
 Several files will be included into either your project level ``Makefile``, or
 in assembly language files you create. These files will be installed into
-``/usr/local/include`` (or C:\usr\local\include`` on a PC). The top level
-makefile will do this for you:
+``/usr/local/include`` (or C:\usr\local\include`` on a PC).
+
+Windoes install
+---------------
+
+On a PC, you create the install the files in the ``C:\Usr\local\include``
+directory (which should be set up before this step) by running the
+``setup.bat`` file:
 
 ..  code-block:: shell
 
-    $ sudo make install
+    C:\> setup
 
-This command will create the needed directory, if it is not already there, then
-copy the needed include files into place.
+On some newer Windows systems, you may need to open up a ``command prompt``
+window as administrator for this to work. See above for notea on doing this.
+
+Mac/Linux install
+-----------------
+
+On Macs, or on Linux, you run ``make`` using the ``sudo`` command:
+
+..  code-block:: shell
+
+    $ sudo make
+
+This command will copy the needed include files into place.
 
 Build the Projects
 ******************
 
 Before you try to build these projects, you should connect your Arduino board
 to your system, and confirm the communications port being used. You can use the
-Arduino IDE to find this information Example port settings are in the project
+Arduino IDE to find this information. Example port settings are in the project
 ``Makefile``. Just edit the ``PORT`` line for your particular system.
 
-There are three example projects included here. You should be able to compile
+You should alo verify the processor for your board. I use Arduino UNI boards in
+my classes, which have the atmega328p chip. 
+
+There are several example projects included here. You should be able to compile
 and run each one by changing into the project directory and doing this:
 
 ..  code-block:: shell
@@ -104,8 +124,17 @@ and run each one by changing into the project directory and doing this:
     $ make 
     $ make load
 
+
 This will build the project code and attempt to load it on your Arduino. You
 will need a piezo buzzer for the aBuzz and aTask projects. See the included
 configuration files for the pin assignments used for each project.
+
+The top level ``Makefile`` can build all of the projects by running this command:
+
+..  code-block:: shell
+
+    $ make build
+
+You can run ``make clean`` at the top level, or in any project directory to clean up all files except the needed source files and the ``Makefile`` for the projects.
 
 ..  vim:filetype=rst spell:
