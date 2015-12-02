@@ -36,7 +36,8 @@ Init:
     ; set up the system clock
     ldi         r24, 0x80       ; set up prescaler
     sts         CLKPR, r24
-    sts         CLKPR, r1       ; run at full speed
+    ldi         r24, 7
+    sts         CLKPR, r24       ; run at full speed
 
     ; setup the buzzer pin
     sbi         _DDRB, BUZZ_PIN  ; set pin 5 on port B for output
