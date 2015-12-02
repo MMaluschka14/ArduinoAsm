@@ -1,0 +1,14 @@
+# C/C++
+*.o
+
+# Arduino
+*.hex
+*.elf
+*.lst
+*.map
+
+# vim
+*~
+*.swp
+
+
