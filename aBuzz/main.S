@@ -5,8 +5,6 @@
 #include <avr/io.h>
 #include "config.inc"
 
-.equ BUZZ_PIN, 4
-
     .section    .text
     .org        0x00
     .extern     timer_init

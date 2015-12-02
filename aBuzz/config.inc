@@ -5,5 +5,5 @@
 
 #define     BUZZ_PORT  _PORTD
 #define     BUZZ_DIR   _DDRD
-#define     BUZZ_PIN1  7
+#define     BUZZ_PIN   7
 
