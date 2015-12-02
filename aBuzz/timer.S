@@ -20,8 +20,8 @@ timer_init:
         ret
 
 timer_delay:
-        in      r16, _TIFR0                      ; check the flag 
-        sbrs    r16, 1 << TOV0                       ; skip if overflow set
+        in      r16, _TIFR0                     ; check the flag 
+        sbrs    r16, 1 << TOV0                  ; skip if overflow set
         rjmp    timer_delay                     ; wait for it
         ldi     r16, 1 << TOV0                  ; clear the interrupt flag
         out     _TIFR0, r16                      ; clear the interrupt flag

@@ -40,15 +40,15 @@ Init:
     sts         CLKPR, r24       ; run at full speed
 
     ; setup the buzzer pin
-    sbi         _DDRB, BUZZ_PIN  ; set pin 5 on port B for output
-    cbi         _PORTB, BUZZ_PIN ; set pin 5 on port B off
+    sbi         BUZZ_DIR, BUZZ_PIN  ; set pin 5 on port B for output
+    cbi         BUZZ_PORT, BUZZ_PIN ; set pin 5 on port B off
 
     call        timer_init      ; set up the timer
     ret
 
 Toggle:
-    in          r24, _PORTB      ; get current port B values
-    ldi         r25, (1 << BUZZ_PIN) ; LED pin number
-    eor         r24, r25        ; toggle bit
-    out         _PORTB, r24      ; write it back in place
+    in          r24, BUZZ_PORT          ; get current port B values
+    ldi         r25, (1 << BUZZ_PIN)    ; LED pin number
+    eor         r24, r25                ; toggle bit
+    out         BUZZ_PORT, r24          ; write it back in place
     ret
