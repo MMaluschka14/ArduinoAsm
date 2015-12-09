@@ -35,7 +35,7 @@ Init:
     ldi         r24, 0x80       ; set up prescaler
     sts         CLKPR, r24
     ldi         r24, 7
-    sts         CLKPR, r24       ; run at full speed
+    sts         CLKPR, r24      ; divide by 128 = 125000 Hz
 
     ; setup the buzzer pin
     sbi         BUZZ_DIR, BUZZ_PIN  ; set pin 5 on port B for output

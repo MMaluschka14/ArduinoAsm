@@ -8,15 +8,15 @@ setup:
 
 build:
 	cd cBlink && make
-	cd aBlink && make
 	cd intBlink && make
+	cd aBlink && make
 	cd aBuzz && make
 	cd aKernel && make
 
 clean:
 	cd cBlink && make clean
-	cd aBlink && make clean
 	cd intBlink && make clean
+	cd aBlink && make clean
 	cd aBuzz && make clean
 	cd aKernel && make clean
 
