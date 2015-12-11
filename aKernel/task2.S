@@ -24,9 +24,9 @@ Task2_init:
         sts         Task2countH, r1     ; clear counter
         sts         Task2countL, r1
         ; set up LED port
-        sbi         LED_DIR, LED_PIN    ; set up the output port (bit 6)
+        sbi         LED_DIR, LED_PIN    ; set up the output port 
         cbi         LED_PORT, LED_PIN   ; start off with the LED off
-        sts         led_on, r1
+        sts         led_on, r1          ; the LED is off
         ret
 
 Task2:

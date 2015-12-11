@@ -1,6 +1,6 @@
 ; main.S - avr-gcc assembly language
 
-#include <avr/io.h>
+#include "config.inc"
 
         .extern Timer0Setup
         .global main
@@ -14,8 +14,8 @@ main:
         sts     CLKPR, r1               ; set to full speed
 
         ; set up LED port
-        sbi     _SFR_IO_ADDR(DDRB), 5                 ; set up the output port (bit 6)
-        cbi     _SFR_IO_ADDR(PORTB), 5                ; start off with the LED off
+        sbi     _DDRB, 5                 ; set up the output port (bit 6)
+        cbi     _PORTB, 5                ; start off with the LED off
 
         call    Timer0Setup             ; initialze the timer
 1:      rjmp    1b   

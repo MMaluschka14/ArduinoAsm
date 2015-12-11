@@ -1,7 +1,7 @@
 ; config.inc - pin assignments for this project
 
 #include <avr/io.h>
-#include "/usr/local/include/special_regs.inc"
+#include "../include/special_regs.inc"
 
 
 #define     LED_PORT   _PORTB

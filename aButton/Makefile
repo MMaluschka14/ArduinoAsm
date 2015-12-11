@@ -1,6 +1,6 @@
-# Makefile for aBlink
+# Makefile for aBuzz
 
-TARGET	= aBlink
+TARGET	= aButton
 
 ASRCS 	= $(wildcard *.S)
 INTTBL	= FALSE

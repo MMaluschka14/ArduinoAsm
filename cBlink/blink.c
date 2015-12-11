@@ -1,10 +1,11 @@
 #include <avr/io.h>
 #include <util/delay.h>
 
-#define LED_ON          (PORTD |= (1<<6))
-#define LED_OFF         (PORTD &= ~(1<<6))
+#define LED_PIN         5
+#define LED_ON          (PORTB |= (1<<LED_PIN))
+#define LED_OFF         (PORTB &= ~(1<<LED_PIN))
 
-#define LED_CONFIG      (DDRD |= (1<<6))
+#define LED_CONFIG      (DDRB |= (1<<LED_PIN))
 #define CPU_PRESCALE(n) (CLKPR = 0x80, CLKPR = (n))
 
 int main(void) {

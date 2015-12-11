@@ -1,12 +1,15 @@
-# Makefile for aBlink
+# Makefile for aBuzz
 
-TARGET	= aBlink
+TARGET	= intBlink
 
 ASRCS 	= $(wildcard *.S)
 INTTBL	= FALSE
 
 # board definition
 MCU	= atmega328p
+#PORT	= /dev/cu.usbmodem1421
+PORT	= /dev/ttyACM0
+#PORT	= COM6
 F_CPU	= 16000000
 
 # do not modify anything below this line

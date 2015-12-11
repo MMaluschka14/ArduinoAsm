@@ -3,17 +3,30 @@
 ;    This list is not complete, but is sufficient for cosc2325 projects
 
 ; I/O ports -------------------------------------
+
+; PORTB --------------------------------------
+; PINB: 0x03 (0x23)
+#define _PINB   _SFR_IO_ADDR(PINB)
+
 ; DDRB: 0x04 (0x24)
 #define _DDRB   _SFR_IO_ADDR(DDRB)
 
 ; PORTB: 0x05 (0x25)
 #define _PORTB  _SFR_IO_ADDR(PORTB)
 
+; PORTC --------------------------------------
+# PINC: 0x06 (0x26)
+#define _PINC _SFR_IO_ADDR(PINC)
+
 ; DDRC: 0x07 (0x27)
 #define _DDRC   _SFR_IO_ADDR(DDRC)
 
 ; PORTC: 0x08 (0x28)
 #define _PORTC  _SFR_IO_ADDR(PORTC)
+
+; PORTD --------------------------------------
+; PIND: 0x09 (0x29)
+#define _PIND   _SFR_IO_ADDR(PIND)
 
 ; DDRD: 0x0A (0x2A)
 #define _DDRD   _SFR_IO_ADDR(DDRD)
@@ -43,6 +56,10 @@
 ; Timer 1 ---------------------------------------
 ; TIFR1: 0x16 (0x26)
 #define _TIRF1    _SFR_IO_ADDR(TIFR1)
+
+; Timer 2 ---------------------------------------
+; TIFR2: 0x17 (0x37)
+#define _TIFR2    _SFR_IO_ADDR(TIFR2)
 
 ; chip initialization ---------------------------
 ; SPL: 0x3D (0x5D)
