@@ -13,6 +13,19 @@ To run these projects, you need to install the following tools:
 
     * GNU make
 
+Set the System path
+===================
+
+The build system for these projects depends on the compiler being accessible
+from the command line. Locate the directory within the Arduino IDE as installed
+on your system and find the directory with the avr-gcc program. Then edit the
+system PATH so this folder is included in the list. If you install the IDE in a
+location other than the default, you may need to edit the Makefile.xxx file in
+the `includes` directory as well, so the compiler and loader can find the
+required include files. Note that you will also need to edit the project level
+Makefile to identify the exact port you Arduino is attached to when you try to
+load these projects on the board.
+
 You must be able to run the following commands to run these projects::
 
 ..  code-block:: shell
